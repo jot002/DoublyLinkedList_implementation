@@ -60,6 +60,7 @@ public class DoublyLinkedList<T> extends AbstractList<T> {
 
         /**
          * Accessor to get the Nodes Element
+         * @return T the element gets returned
          */
         public T getElement() {
             return this.data;
@@ -196,7 +197,7 @@ public class DoublyLinkedList<T> extends AbstractList<T> {
             Node addedNode = new Node(element, tail, beforeTail);
             beforeTail.setNext(addedNode);
             tail.setPrev(addedNode);
-            nelems ++;
+            nelems++;
         }
     }
 
@@ -220,7 +221,7 @@ public class DoublyLinkedList<T> extends AbstractList<T> {
      */
     @Override
     public boolean contains(Object element) {
-        T data = (T)element;
+        T data = (T) element;
         Node currentNode = this.head.next;
         while (currentNode != this.tail) {
             if (currentNode.getElement() == data) {
