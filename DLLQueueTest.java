@@ -1,10 +1,11 @@
+import org.junit.Test;
 
 import static org.junit.Assert.*;
-import org.junit.jupiter.api.Test;
-class DLLQueueTest {
 
-    @org.junit.jupiter.api.Test
-    void size() {
+public class DLLQueueTest {
+
+    @Test
+    public void size() {
         DLLQueue queue1 = new DLLQueue();
         DLLQueue queue2 = new DLLQueue();
         DLLQueue queue3 = new DLLQueue();
@@ -20,8 +21,8 @@ class DLLQueueTest {
         assertEquals(2, queue2.size());
     }
 
-    @org.junit.jupiter.api.Test
-    void isEmpty() {
+    @Test
+    public void isEmpty() {
         DLLQueue queue1 = new DLLQueue();
         DLLQueue queue2 = new DLLQueue();
         DLLQueue queue3 = new DLLQueue();
@@ -40,8 +41,8 @@ class DLLQueueTest {
         assertEquals(true, queue2.isEmpty());
     }
 
-    @org.junit.jupiter.api.Test
-    void enqueue() {
+    @Test
+    public void enqueue() {
         DLLQueue queue1 = new DLLQueue();
         DLLQueue queue2 = new DLLQueue();
         DLLQueue queue3 = new DLLQueue();
@@ -57,8 +58,8 @@ class DLLQueueTest {
         assertEquals(2, queue2.size());
     }
 
-    @org.junit.jupiter.api.Test
-    void dequeue() {
+    @Test
+    public void dequeue() {
         DLLQueue queue1 = new DLLQueue();
         DLLQueue queue2 = new DLLQueue();
         DLLQueue queue3 = new DLLQueue();
@@ -79,8 +80,8 @@ class DLLQueueTest {
         assertEquals(null, queue3.dequeue());
     }
 
-    @org.junit.jupiter.api.Test
-    void peek() {
+    @Test
+    public void peek() {
         DLLQueue queue1 = new DLLQueue();
         DLLQueue queue2 = new DLLQueue();
         DLLQueue queue3 = new DLLQueue();

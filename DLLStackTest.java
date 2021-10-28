@@ -1,18 +1,11 @@
 import org.junit.Test;
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.Before;
 
-class DLLStackTest {
+import static org.junit.Assert.*;
 
-    @Before
-    public void setup(){
-        DLLStack stack1 = new DLLStack();
-        DLLStack stack2 = new DLLStack();
-        DLLStack stack3 = new DLLStack();
-    }
+public class DLLStackTest {
 
-    @org.junit.jupiter.api.Test
-    void size() {
+    @Test
+    public void size() {
         DLLStack stack1 = new DLLStack();
         DLLStack stack2 = new DLLStack();
         DLLStack stack3 = new DLLStack();
@@ -21,15 +14,15 @@ class DLLStackTest {
         stack2.push(i);
         stack2.push(i);
         stack2.push(i);
-        assertEquals(new Integer(1), stack1.size());
-        assertEquals(new Integer(3), stack2.size());
-        assertEquals(new Integer(0), stack3.size());
+        assertEquals(1, stack1.size());
+        assertEquals(3, stack2.size());
+        assertEquals(0, stack3.size());
         stack2.pop();
-        assertEquals(new Integer(2), stack2.size());
+        assertEquals(2, stack2.size());
     }
 
-    @org.junit.jupiter.api.Test
-    void isEmpty() {
+    @Test
+    public void isEmpty() {
         DLLStack stack1 = new DLLStack();
         DLLStack stack2 = new DLLStack();
         DLLStack stack3 = new DLLStack();
@@ -45,8 +38,8 @@ class DLLStackTest {
         assertEquals(true, stack2.isEmpty());
     }
 
-    @org.junit.jupiter.api.Test
-    void push() {
+    @Test
+    public void push() {
         DLLStack stack1 = new DLLStack();
         DLLStack stack2 = new DLLStack();
         DLLStack stack3 = new DLLStack();
@@ -55,15 +48,15 @@ class DLLStackTest {
         stack2.push(i);
         stack2.push(i);
         stack2.push(i);
-        assertEquals(new Integer(1), stack1.size());
-        assertEquals(new Integer(3), stack2.size());
-        assertEquals(new Integer(0), stack3.size());
+        assertEquals(1, stack1.size());
+        assertEquals(3, stack2.size());
+        assertEquals(0, stack3.size());
         stack2.pop();
-        assertEquals(new Integer(2), stack2.size());
+        assertEquals(2, stack2.size());
     }
 
-    @org.junit.jupiter.api.Test
-    void pop() {
+    @Test
+    public void pop() {
         DLLStack stack1 = new DLLStack();
         DLLStack stack2 = new DLLStack();
         DLLStack stack3 = new DLLStack();
@@ -72,21 +65,21 @@ class DLLStackTest {
         stack2.push(i);
         stack2.push(i);
         stack2.push(i);
-        assertEquals(new Integer(1), stack1.size());
-        assertEquals(new Integer(3), stack2.size());
-        assertEquals(new Integer(0), stack3.size());
+        assertEquals(1, stack1.size());
+        assertEquals(3, stack2.size());
+        assertEquals(0, stack3.size());
         stack2.pop();
-        assertEquals(new Integer(2), stack2.size());
+        assertEquals(2, stack2.size());
         stack2.pop();
-        assertEquals(new Integer(1), stack2.size());
+        assertEquals(1, stack2.size());
         stack2.pop();
-        assertEquals(new Integer(0), stack2.size());
+        assertEquals(0, stack2.size());
         stack3.pop();
         assertEquals(null, stack3.pop());
     }
 
-    @org.junit.jupiter.api.Test
-    void peek() {
+    @Test
+    public void peek() {
         DLLStack stack1 = new DLLStack();
         DLLStack stack2 = new DLLStack();
         DLLStack stack3 = new DLLStack();
@@ -95,14 +88,14 @@ class DLLStackTest {
         int k = 9;
         stack1.push(i);
         stack2.push(i);
-        assertEquals(new Integer(0), stack2.peek());
+        assertEquals(0, stack2.peek());
         stack2.push(j);
-        assertEquals(new Integer(4), stack2.peek());
+        assertEquals(4, stack2.peek());
         stack2.push(k);
-        assertEquals(new Integer(9), stack2.peek());
-        assertEquals(new Integer(0), stack1.peek());
+        assertEquals(9, stack2.peek());
+        assertEquals(0, stack1.peek());
         assertEquals(null, stack3.peek());
         stack2.pop();
-        assertEquals(new Integer(4), stack2.peek());
+        assertEquals(4, stack2.peek());
     }
 }
