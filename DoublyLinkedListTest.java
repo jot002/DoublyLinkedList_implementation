@@ -20,10 +20,42 @@ public class DoublyLinkedListTest {
         assertEquals(0, list3.size());
     }
 
-//    @Test
-//    public void testAdd() {
-//    }
+    @Test(expected = NullPointerException.class)
+    public void add2() {
+        DoublyLinkedList list1 = new DoublyLinkedList();
+        list1.add(null);
+    }
 
+    @Test
+    public void add3() {
+        DoublyLinkedList list1 = new DoublyLinkedList();
+        DoublyLinkedList list2 = new DoublyLinkedList();
+        DoublyLinkedList list3 = new DoublyLinkedList();
+        list1.add(1);
+        list1.add(2);
+        assertEquals(2, list1.size());
+        list2.add(1);
+        assertEquals(1, list2.size());
+        assertEquals(0, list3.size());
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void add4() {
+        DoublyLinkedList list1 = new DoublyLinkedList();
+        list1.add(-1,233);
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void add5() {
+        DoublyLinkedList list1 = new DoublyLinkedList();
+        list1.add(342,34);
+    }
+    @Test(expected = NullPointerException.class)
+    public void add6() {
+        DoublyLinkedList list1 = new DoublyLinkedList();
+        list1.add(1);
+        list1.add(0,null);
+    }
     @Test
     public void clear() {
         DoublyLinkedList list1 = new DoublyLinkedList();
@@ -65,7 +97,18 @@ public class DoublyLinkedListTest {
         assertEquals(2,list1.get(1));
         assertEquals(3,list1.get(2));
         assertEquals(4,list1.get(3));
-
+    }
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void get2() {
+        DoublyLinkedList list1 = new DoublyLinkedList();
+        list1.add(1);
+        list1.get(-1);
+    }
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void get3() {
+        DoublyLinkedList list1 = new DoublyLinkedList();
+        list1.add(1);
+        list1.get(1);
     }
 
     @Test
@@ -98,6 +141,19 @@ public class DoublyLinkedListTest {
         list1.remove(1);
         assertEquals(2,list1.size());
     }
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void remove2() {
+        DoublyLinkedList list1 = new DoublyLinkedList();
+        list1.add(1);
+        list1.remove(-1);
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void remove3() {
+        DoublyLinkedList list1 = new DoublyLinkedList();
+        list1.add(1);
+        list1.remove(1);
+    }
 
     @Test
     public void set() {
@@ -117,6 +173,24 @@ public class DoublyLinkedListTest {
         assertEquals(231,list1.get(1));
     }
 
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void set2() {
+        DoublyLinkedList list1 = new DoublyLinkedList();
+        list1.add(1);
+        list1.set(-1, 44);
+    }
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void set3() {
+        DoublyLinkedList list1 = new DoublyLinkedList();
+        list1.add(1);
+        list1.set(1,1);
+    }
+    @Test(expected = NullPointerException.class)
+    public void set4() {
+        DoublyLinkedList list1 = new DoublyLinkedList();
+        list1.add(1);
+        list1.set(0,null);
+    }
     @Test
     public void size() {
         DoublyLinkedList list1 = new DoublyLinkedList();
